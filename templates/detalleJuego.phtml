@@ -1,0 +1,17 @@
+<?php require_once("templates/header.phtml") ?>
+
+
+<div class="container-listado">
+    <div class="contenedor-imagen-videojuego">
+    <img class="imagen-videojuego" src="<?= $Juego->imagen ?>" style="max-width:300px; max-height:400px; object-fit:contain; border-radius:10px;">
+</div>
+
+<ul class='list-group'>
+    <li class='list-group-item list-group-item-dark'>Título: <?= $Juego->titulo ?></li>
+    <li class='list-group-item list-group-item-dark'>Año de publicación: <?= $Juego->anio_publicacion ?></li>
+
+    <li class='list-group-item list-group-item-dark'>Sinopsis: <?= $Juego->sinopsis ?></li>
+</ul>
+
+<a href="showJuegos" class="btn btn-primary">Volver</a>
+</div>

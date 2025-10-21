@@ -1,0 +1,25 @@
+<?php require_once("templates/header.phtml") ?>
+
+<div class="form-container">
+    <form action="agregarGenero" method="POST" class="my-4">
+        <div class="row">
+            <div class="col-9">
+                <div class="form-group">
+                    <label>Nombre del Género:</label>
+                    <input name="nombre" type="text" class="form-control">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-9">
+                <div class="form-group">
+                    <label>Descripción del Género:</label>
+                    <textarea name="descripcion" class="form-control"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-2">Guardar</button>
+    </form>
+</div>

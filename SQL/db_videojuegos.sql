@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-09-2025 a las 22:59:44
+-- Tiempo de generación: 21-10-2025 a las 02:37:23
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -45,6 +45,25 @@ INSERT INTO `generos` (`id_genero`, `nombre`, `descripcion`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL,
+  `user_name` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `user_name`, `password`) VALUES
+(1, 'webadmin', '$2b$10$vmucttHXCoC9Js7gMf9ZpuND62Ky9GCIL/O8etyZSCfILYUkXKrWi');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `videojuegos`
 --
 
@@ -63,9 +82,9 @@ CREATE TABLE `videojuegos` (
 
 INSERT INTO `videojuegos` (`id_videojuego`, `titulo`, `id_genero`, `anio_publicacion`, `imagen`, `sinopsis`) VALUES
 (1, 'The Witcher 3: Wild Hunt', 1, 2015, '', 'Sigue a Geralt de Rivia en su búsqueda de Ciri mientras enfrenta la Cacería Salvaje'),
-(2, 'Hollow Knight', 2, 2017, '', 'Explora Hallownest, un vasto y antiguo reino subterráneo habitado por insectos y misteriosas criaturas. Como el misterioso Caballero, te enfrentarás a enemigos peligrosos, descubrirás secretos ocultos, desbloquearás habilidades únicas y desentrañarás la oscura historia que ha corrompido este mundo olvidado.'),
+(2, 'Hollow Knight', 2, 2017, 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/367520/header.jpg?t=1695270428', 'Explora Hallownest, un vasto y antiguo reino subterráneo habitado por insectos y misteriosas criaturas. Como el misterioso Caballero, te enfrentarás a enemigos peligrosos, descubrirás secretos ocultos, desbloquearás habilidades únicas y desentrañarás la oscura historia que ha corrompido este mundo olvidado.'),
 (3, 'World of Warcraft', 3, 2004, '', 'Sumérgete en Azeroth, un mundo masivo y persistente donde miles de jugadores interactúan en línea. Crea tu personaje, elige tu raza y clase, completa misiones, explora vastos territorios, participa en mazmorras y raids con otros jugadores, y forma parte de la épica lucha entre la Horda y la Alianza mientras descubres la rica historia del mundo.'),
-(5, 'Hollow Knight: Silksong', 2, 2025, '', 'En Silksong, encarnas a Hornet, la aguerrida protectora de Hallownest, transportada a un misterioso reino completamente nuevo. Explora vastos y verticales escenarios, enfréntate a enemigos únicos y jefes desafiantes, desbloquea habilidades especiales y desentraña los secretos oscuros de este nuevo mundo en tu viaje para descubrir tu destino.');
+(5, 'Hollow Knight: Silksong', 2, 2025, 'https://assets.nintendo.com/image/upload/ar_16:9,c_lpad,w_656/b_white/f_auto/q_auto/store/software/switch/70010000020840/60eebc8f7133f685eddbffbe43c8da617ba0a5d699f2008f9c31c6119d1792af', 'En Silksong, encarnas a Hornet, la aguerrida protectora de Hallownest, transportada a un misterioso reino completamente nuevo. Explora vastos y verticales escenarios, enfréntate a enemigos únicos y jefes desafiantes, desbloquea habilidades especiales y desentraña los secretos oscuros de este nuevo mundo en tu viaje para descubrir tu destino.');
 
 --
 -- Índices para tablas volcadas
@@ -76,6 +95,12 @@ INSERT INTO `videojuegos` (`id_videojuego`, `titulo`, `id_genero`, `anio_publica
 --
 ALTER TABLE `generos`
   ADD PRIMARY KEY (`id_genero`);
+
+--
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `videojuegos`
@@ -92,13 +117,19 @@ ALTER TABLE `videojuegos`
 -- AUTO_INCREMENT de la tabla `generos`
 --
 ALTER TABLE `generos`
-  MODIFY `id_genero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_genero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `videojuegos`
 --
 ALTER TABLE `videojuegos`
-  MODIFY `id_videojuego` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_videojuego` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Restricciones para tablas volcadas
